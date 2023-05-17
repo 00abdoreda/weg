@@ -12,7 +12,7 @@
 
 @layer base {
   main {
-    height: 92vh;
+    height: 95vh;
     overflow: scroll;
     scroll-snap-type: y mandatory;
   }
@@ -55,6 +55,7 @@
     position: fixed;
     width: 100vw;
     z-index: 10;
+   
   }
 
   footer {
@@ -81,6 +82,7 @@
     margin-inline: auto;
     padding-block: 2rem;
     overflow: hidden;
+    
   }
 
   section > :is(h1, h2, h3),

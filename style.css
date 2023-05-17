@@ -132,8 +132,8 @@ p{
 		
 		/* Content */
 		 .content {
-            width: 95vw;
-    height: 90vh;
+            width: 100vw;
+    height: 100vh;
     
     
 		}
@@ -182,7 +182,7 @@ p{
             /* padding-top: 280px;
             padding-right: 960px; */
             text-align: left;
-            margin-top: 65vh;
+            margin-top: 68vh;
             margin-left: 2%;
             font-weight: 100;
   /* font: -30 35vmin/50vh arial; */
@@ -296,14 +296,14 @@ html{
     scroll-behavior:smooth;
 }
  .parent {
-  border: 1px solid black;
+  border: 1px solid transparent;
   margin: 1rem;
   
   text-align: left;
 }
  .child {
   display: inline-block;
-  border: 1px solid red;
+  border: 1px solid transparent;
   padding: 1rem 1rem;
 
 }
