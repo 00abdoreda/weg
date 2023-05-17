@@ -36,7 +36,7 @@ p{
     background-color: transparent;
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 999;
     height: 3.5vw;
 }
 
@@ -121,7 +121,7 @@ p{
 			z-index: -1;
 		}
 		
-		 video {
+		  video {
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -131,19 +131,19 @@ p{
 		}
 		
 		/* Content */
-		.content {
+		 .content {
             width: 95vw;
-    height: 80vh;
+    height: 90vh;
     
     
 		}
-        .content:target{
+         .content:target{
             left: 0vw;
     z-index: 1;
         }
 
 		
-		.content h2 {
+		 .content h2 {
 			font-size: 3vh;
 			margin-bottom: 20px;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -152,12 +152,12 @@ p{
             mix-blend-mode:exclusion;
 		}
 		
-		.content p {
+		 .content p {
 			font-size: 18px;
 			line-height: 1;
 			
 		}
-        .content ul{
+           .content ul{
             position: relative;
             font-size: .8vw;
            
@@ -166,7 +166,7 @@ p{
            z-index: 1;
             mix-blend-mode:exclusion;
         }
-        .marr{
+             .marr{
             width: 80%;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
   color: #fff;
@@ -174,15 +174,15 @@ p{
             mix-blend-mode:exclusion; 
         }
        
-        h2, .marr {
+            h2, .marr {
 			display:inline-block;
             vertical-align:top;
 		}
-        #p1{
+           #p1{
             /* padding-top: 280px;
             padding-right: 960px; */
             text-align: left;
-            
+            margin-top: 65vh;
             margin-left: 2%;
             font-weight: 100;
   /* font: -30 35vmin/50vh arial; */
@@ -192,7 +192,7 @@ p{
             mix-blend-mode:exclusion;
         
         }
-        #p2{
+          #p2{
             margin-left: 2%;
             
              font-size: 4.9vw; 
@@ -206,7 +206,7 @@ p{
   /* filter: drop-shadow(0.05em 0.05em orange); */
   font-weight: 900;
         }
-        #p3{
+            #p3{
             margin-left: 2%;
              font-size: 4.9vw;
             text-align: left;
@@ -218,7 +218,7 @@ p{
   font-weight: 900;
   
         }
-        #p4{
+           #p4{
             margin-left: 2%;
              
              text-align: left;
@@ -229,8 +229,9 @@ p{
    margin-left: 11vw;
     margin-top: 20px;
     font-weight: 900;
+    
          }
-         #p5{
+            #p5{
            
             margin-left: 2%;
           font-size: .8vw;
@@ -248,7 +249,7 @@ p{
             mix-blend-mode:exclusion;
         
         }
-        #p6{
+          #p6{
             margin-left: 2%;
              font-size: 1.5vw; 
             text-align: left;
@@ -258,7 +259,7 @@ p{
             mix-blend-mode:exclusion;
   font-weight: 900;
         }
-        #p7{
+          #p7{
              font-size: 60px;
             text-align: left;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -268,7 +269,7 @@ p{
   font-weight: 900;
   
         }
-        #p8{
+          #p8{
              
              text-align: left;
              text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -294,13 +295,13 @@ p{
 html{
     scroll-behavior:smooth;
 }
-.parent {
+ .parent {
   border: 1px solid black;
   margin: 1rem;
   
   text-align: left;
 }
-.child {
+ .child {
   display: inline-block;
   border: 1px solid red;
   padding: 1rem 1rem;
@@ -342,11 +343,11 @@ html{
         background-color: #ffffff;
         
     }
-    .content h2 {
+      .content h2 {
 				font-size: 28px;
 			}
 			
-			.content p {
+			 .content p {
 				font-size: 16px;
 			}
             .hamburger.active .bar:nth-child(2) {
@@ -360,7 +361,7 @@ html{
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-    #p1{
+      #p1{
             /* padding-top: 280px;
             padding-right: 960px; */
             text-align: left;
@@ -372,7 +373,7 @@ html{
   
         
         }
-        #p2{
+          #p2{
              font-size: 30px; 
             text-align: left;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -380,7 +381,7 @@ html{
            z-index: 1;
             mix-blend-mode:exclusion;
         }
-        #p3{
+           #p3{
              font-size: 30px;
             text-align: left;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -388,7 +389,7 @@ html{
            z-index: 1;
             mix-blend-mode:exclusion;
         }
-        #p4{
+          #p4{
              
             text-align: left;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -396,7 +397,7 @@ html{
            z-index: 1;
             mix-blend-mode:exclusion;
         }
-        #p5{
+          #p5{
             /* padding-top: 280px;
             padding-right: 960px; */
             text-align: left;
@@ -408,7 +409,7 @@ html{
   
         
         }
-        #p6{
+          #p6{
              font-size: 30px; 
             text-align: left;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -416,7 +417,7 @@ html{
            z-index: 1;
             mix-blend-mode:exclusion;
         }
-        #p7{
+          #p7{
              font-size: 30px;
             text-align: left;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
@@ -424,13 +425,16 @@ html{
            z-index: 1;
             mix-blend-mode:exclusion;
         }
-        #p8{
+         #p8{
              
             text-align: left;
             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
             color: #fff;
            z-index: 1;
             mix-blend-mode:exclusion;
+        }
+        .content div{
+            z-index: 1;
         }
 
 }
