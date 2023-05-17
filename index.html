@@ -23,24 +23,24 @@
     rel="stylesheet"
   />
   <script>
-    const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+//     const hamburger = document.querySelector(".hamburger");
+// const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", mobileMenu);
+// hamburger.addEventListener("click", mobileMenu);
 
-function mobileMenu() {
-hamburger.classList.toggle("active");
-navMenu.classList.toggle("active");
-}
+// function mobileMenu() {
+// hamburger.classList.toggle("active");
+// navMenu.classList.toggle("active");
+// }
 
-const navLink = document.querySelectorAll(".nav-link");
+// const navLink = document.querySelectorAll(".nav-link");
 
-navLink.forEach(n => n.addEventListener("click", closeMenu));
+// navLink.forEach(n => n.addEventListener("click", closeMenu));
 
-function closeMenu() {
-hamburger.classList.remove("active");
-navMenu.classList.remove("active");
-}
+// function closeMenu() {
+// hamburger.classList.remove("active");
+// navMenu.classList.remove("active");
+// }
 
 
 // Randomly change to showcase updates
@@ -103,27 +103,22 @@ navMenu.classList.remove("active");
 // // add a scroll event listener to the window
 // add a scroll event listener to the window
 
-$(document).on('scroll', function(){
-if ( $(window).scrollTop() > 30) {
-    $('.header').addClass('change-color');
-    $('.nav-link').addClass('change-color2');
-    $('.nav-logo').addClass('change-color2');
+// $(document).on('scroll', function(){
+// if ( $(window).scrollTop() > 30) {
+//     $('.header').addClass('change-color');
+//     $('.nav-link').addClass('change-color2');
+//     $('.nav-logo').addClass('change-color2');
     
-} else {
-    $('.header').removeClass('change-color');
-    $('.nav-link').removeClass('change-color2');
-    $('.nav-logo').removeClass('change-color2');
-}
-});
+// } else {
+//     $('.header').removeClass('change-color');
+//     $('.nav-link').removeClass('change-color2');
+//     $('.nav-logo').removeClass('change-color2');
+// }
+// });
+
 
 // To check the scroll position on page load
-var $window = $(window);
-var $document = $(document);
-var $navGoPrev = $(".go-prev");
-var $navGoNext = $(".go-next");
-var $slidesContainer = $("");
-var $slides = $(".content");
-var $currentSlide = $slides.first();
+
 
 </script>
 </head>
@@ -151,7 +146,8 @@ var $currentSlide = $slides.first();
         </nav>
 	
 	</div>
-    <main>
+    <main id="main">
+        
         <video autoplay muted loop  >
             <source src="https://github.com/00abdoreda/googleplay/raw/main/Untitled.mp4" type="video/mp4">
             
@@ -417,7 +413,26 @@ var $currentSlide = $slides.first();
       <!-- End Landing -->
       <script src="script.js"></script>
 
+<script>
+    const scrollEvent = () => {
+        const main = document.querySelector('#main');
+ 
+  const section1 = document.querySelector('.header');
+  
 
+  if (main.scrollTop > 50) {
+    section1.style.backgroundColor = "black";
+
+  } else {
+    section1.style.backgroundColor = "transparent";
+  }
+
+ 
+}
+main.addEventListener('scroll', scrollEvent);
+
+
+</script>
 	
     
 	

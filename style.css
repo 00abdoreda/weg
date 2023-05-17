@@ -41,6 +41,7 @@ p{
 }
 
 
+
 .change-color {
     border-bottom: 1px solid black;
     background-color: black;
@@ -182,7 +183,7 @@ p{
             /* padding-top: 280px;
             padding-right: 960px; */
             text-align: left;
-            margin-top: 68vh;
+            margin-top: 60vh;
             margin-left: 2%;
             font-weight: 100;
   /* font: -30 35vmin/50vh arial; */

@@ -36,6 +36,7 @@
     --slide-width: 65ch;
     --slide-motion: 100ms ease;
 
+
     font-family: sans-serif;
     background-color: var(--c-bg);
     color: var(--c-fg);
@@ -227,4 +228,5 @@
   figcaption::before {
     content: "⤷ ";
   }
+  
 }
