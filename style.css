@@ -130,7 +130,13 @@ p{
 			height: 100%;
 			object-fit: cover;
 		}
-		
+        .noise{
+            background: black;
+            background-image: url(/images/noise.webp);
+            z-index: 1;
+            opacity: 95%;
+
+        }
 		/* Content */
 		 .content {
             width: 100vw;
