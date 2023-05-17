@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<title>Responsive Page with Video Background and Navbar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+        
+        @font-face {
+            font-family: 'myfont';
+            src: url('fonts/a.otf');
+            font-weight: bold;
+        }
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: 'myfont', sans-serif;
+		}
+		
+		/* Sticky header navbar */
+	
+        li {
+    list-style: none;
+}
+html {
+  scroll-behavior: smooth;
+  
+}
+
+a {
+    text-decoration: none;
+    
+}
+h2{
+    color: #ffffff;
+}
+p{
+    color: #ffffff;
+}
+.header{
+    border-bottom: 1px solid transparent;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.change-color {
+    border-bottom: 1px solid black;
+    background-color: black;
+    mix-blend-mode: normal;
+}
+.change-color2 {
+  color: white;
+  mix-blend-mode: normal;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    
+}
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+}
+
+.nav-link:hover{
+    color: #482ff7;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+}
+
+	
+		
+		
+	
+	
+	
+		/* Video background */
+		.video-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			z-index: -1;
+		}
+		
+		 video {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+		
+		/* Content */
+		.content {
+            width: 100vw;
+    height: 80vh;
+    
+    
+		}
+        .content:target{
+            left: 0vw;
+    z-index: 1;
+        }
+
+		
+		.content h2 {
+			font-size: 3vh;
+			margin-bottom: 20px;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+		}
+		
+		.content p {
+			font-size: 18px;
+			line-height: 1;
+			
+		}
+        .content ul{
+            position: relative;
+            font-size: .8vw;
+           
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        }
+        .marr{
+            width: 80%;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion; 
+        }
+        h2, .marr {
+			display:inline-block;
+            vertical-align:top;
+		}
+        #p1{
+            /* padding-top: 280px;
+            padding-right: 960px; */
+            text-align: left;
+            margin-top: 20%;
+            margin-left: 2%;
+            font-weight: 100;
+  /* font: -30 35vmin/50vh arial; */
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+  color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        
+        }
+        #p2{
+            margin-left: 2%;
+            
+             font-size: 5vw; 
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+           
+            
+  /* filter: drop-shadow(0.05em 0.05em orange); */
+  font-weight: 900;
+        }
+        #p3{
+            margin-left: 2%;
+             font-size: 5vw;
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+  
+  font-weight: 900;
+  
+        }
+        #p4{
+            margin-left: 2%;
+             
+             text-align: left;
+             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+   margin-left: 12vw;
+    margin-top: 20px;
+    font-weight: 900;
+         }
+         #p5{
+            margin-top: 10%;
+            margin-left: 2%;
+          font-size: .8vw;
+            /* padding-top: 280px;
+            padding-right: 960px; */
+            text-align: left;
+            
+            color: white;
+            font-weight: 100;
+  /* font: -30 35vmin/50vh arial; */
+  
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        
+        }
+        #p6{
+            margin-left: 2%;
+             font-size: 1.5vw; 
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+  font-weight: 900;
+        }
+        #p7{
+             font-size: 60px;
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+  font-weight: 900;
+  
+        }
+        #p8{
+             
+             text-align: left;
+             text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+   margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: 15%;
+    font-weight: 900;
+         }
+         
+         .reveal{
+  /* position: relative; */
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 3s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+html{
+    scroll-behavior:smooth;
+}
+.parent {
+  border: 1px solid black;
+  margin: 1rem;
+  
+  text-align: left;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+
+}
+
+       
+        @media only screen and (max-width: 768px) {
+    .nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #000000;
+}
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        /* background-color: #fff; */
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        background-color: #ffffff;
+        
+    }
+    .content h2 {
+				font-size: 28px;
+			}
+			
+			.content p {
+				font-size: 16px;
+			}
+            .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    #p1{
+            /* padding-top: 280px;
+            padding-right: 960px; */
+            text-align: left;
+            margin-top: 100%;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+  
+        
+        }
+        #p2{
+             font-size: 30px; 
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        }
+        #p3{
+             font-size: 30px;
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        }
+        #p4{
+             
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        }
+        #p5{
+            /* padding-top: 280px;
+            padding-right: 960px; */
+            text-align: left;
+            margin-top: 100%;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+  
+        
+        }
+        #p6{
+             font-size: 30px; 
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        }
+        #p7{
+             font-size: 30px;
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        }
+        #p8{
+             
+            text-align: left;
+            text-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+            color: #fff;
+           z-index: 1;
+            mix-blend-mode:exclusion;
+        }
+
+}
+	</style>
+</head>
+<body >
+	<div class="header">
+        <nav class="navbar">
+            <a href="#page1" class="nav-logo">HYPSU</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#page2" class="nav-link">HOW WE HELP</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">WHO WE ARE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">CONTACT US</a>
+                </li>
+               
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+	
+	</div>
+	
+
+		<video autoplay muted loop onclick="scrollfunction()"  >
+			<source src="https://github.com/00abdoreda/googleplay/raw/main/Untitled.mp4" type="video/mp4">
+			
+			Your browser does not support the video tag.
+		</video>
+         
+	
+	
+	<div class="content " id="page1" >
+        <br>
+        <br>
+        <br>
+        <br>
+        <p id="p1" >HYPSU is brand success consultancy</p>
+        <br>
+        <p id="p2"  >WE MAKE YOUR FUTURE SO IRRESISTIBLE </p>
+        <div style="display: flex; ">
+            <p id="p3" >IT BECOMES INEVITABLE</p>
+            <p id="p4" >Empowering our clients to take advantage of their most <br>critical opportunities throw branding & digital markting</p>
+            
+            
+          
+        </div>
+        
+        
+
+
+	</div>
+    <div class="content" id="page2"  >
+       
+        <p id="p5" >OUR CAPABILITIES</p>
+        <br>
+        <p id="p6" >Our team are purpose built around our ambitious clients who want to <br>define the future , not hide from it,discover opportunities they may never<br>have imagined and achieve extraordinary results</p>
+        <div class='parent'>
+            <div class='child' style="padding-right: 4%;" >
+                <h2 >Artificial Intelligence</h2>
+                <ul>
+                    <li>Al Personalization</li>
+                    <li>Spend Management Value Based Bidding</li>
+                    <li>Predictive Insights & Alerting</li>
+                    <li>Content Generation</li>
+                    <li>Search & Discoverabilitiy</li>
+                    <li>Custom NPL Applications</li>
+                    <li>Machine Learning Ops</li>
+                    <li>Feature Engineering & Storage</li>
+                    <li>Audience Management</li>
+                    <li>Synthetic Labeling</li>
+                    <li>Content Generation</li>
+                    <li>Augement Reality</li>
+                    <li>Creative Applications</li>
+                    <li>GPT Chatbots</li>
+                    <br>
+                    </ul>
+    
+            </div>
+            <div class='child'style="padding-right: 4%;">
+                <h2 >Creative</h2>
+                <ul>
+                    <li>Brand Identity</li>
+                    <li>Brand Strategy</li>
+                    <li>Campaign Development</li>
+                    <li>Dynamic Creative Automation</li>
+                    <li>Influencer Marketing</li>
+                    <li>Motion Design & Animation</li>
+                    <li>Production</li>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    </ul>
+    
+            </div>
+            <div class='child'style="padding-right: 4%;">
+                <h2 >Engineering</h2>
+                <ul>
+                    <li>Blockchain</li>
+                    <li>Technology Strategy & Architechture</li>
+                    <li>Web & Mobile App Development</li>
+                    <li>CX/UX Platforms</li>
+                    <li>Commerce Platforms</li>
+                    <li>Cloud Engineering Emerging Technologies 24/7 Managed Services</li>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    </ul>
+    
+            </div>
+            <div class='child'style="padding-right: 4%;">
+                <h2 >Experience</h2>
+                <ul>
+                    <li>Strategy & Innovation</li>
+                    <li>UX/UI Design</li>
+                    <li>Product Design</li>
+                    <li>E-commerce & Web Design</li>
+                    <li>Conversational & Voice</li>
+                    <li>Design Sprints</li>
+                    <li>Metaverse Practice</li>
+                    <li>AR & VR Design</li>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                    </ul>
+    
+            </div>
+            <div class='child'>
+                <h2 >Growth Marketing</h2>
+                <ul>
+                    <li>Media Strategy & Planning</li>
+                    <li>Paid Search</li>
+                    <li>Paid Social</li>
+                    <li>Search Engine Optimization(SEO)</li>
+                    <li>E-commerce & Marketplaces</li>
+                    <li>Programmatic</li>
+                    <li>Connected TV (CTV)</li>
+                    <li>Over-the-top Media (OTT)</li>
+                    <li>Conversion Rate Optimization (CRO)</li>
+                    <li>Data & Intelligence</li>
+                    <li>Creative Performance</li>
+                    <li>Content Marketing</li>
+                    <li>Marketing Automation</li>
+                    <li>Digital Due Diligence</li>
+                    <li>Technology</li>
+                    </ul>
+    
+            </div>
+
+        </div>
+       
+       
+          
+        <!-- <div style="display: flex; ">
+            <p id="p7" >ss</p>
+            <p id="p8" ></p>
+            
+            
+          
+        </div> -->
+        <h2 style="margin-left: 2%">INDUSTRIES </h2>
+        <marquee class="marr"  direction="left" height="20px" style="margin-left: 1%">
+            Agriculture Banking Consumer Goods & Services Energy Entertainment Fashion Finance Food & Beverage Healthcare Hospitality Insurance Lifestyle Manufacturing & Industrials Media Pharmaceuticals Public Service & Non-Profit Retail & Commerce
+            </marquee>
+        
+    </div>
+        
+        
+
+
+	</div>
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+
+// Randomly change to showcase updates
+
+$(window).bind('mousewheel', function(event) {
+if (event.originalEvent.wheelDelta >= 0) {
+    var startY = window.scrollY;
+  var distance = 0 - startY;
+  var startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) {
+      startTime = currentTime;
+    }
+    var timeElapsed = currentTime - startTime;
+    var scrollAmount = easeInOutQuad(timeElapsed, startY, distance, 1000);
+    window.scrollTo(0, scrollAmount);
+    if (timeElapsed < 1000) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function easeInOutQuad(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
+else {
+    var startY = window.scrollY;
+  var distance = 1600 - startY;
+  var startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) {
+      startTime = currentTime;
+    }
+    var timeElapsed = currentTime - startTime;
+    var scrollAmount = easeInOutQuad(timeElapsed, startY, distance, 1000);
+    window.scrollTo(0, scrollAmount);
+    if (timeElapsed < 1000) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  function easeInOutQuad(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
+});
+$(document).on('scroll', function(){
+    if ( $(window).scrollTop() > 30) {
+        $('.header').addClass('change-color');
+        $('.nav-link').addClass('change-color2');
+        $('.nav-logo').addClass('change-color2');
+    } else {
+        $('.header').removeClass('change-color');
+        $('.nav-link').removeClass('change-color2');
+        $('.nav-logo').removeClass('change-color2');
+    }
+});
+
+// To check the scroll position on page load
+
+
+    </script>
+	  
+
+</body>
+</html>
+
